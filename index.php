@@ -12,13 +12,13 @@ require "common/common.php";
 require "common/db.php";
 define("isMobile",isMobile());
 if(isMobile){
-    require_once("libs/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/alipay.config.php");
-    require_once("libs/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/lib/alipay_submit.class.php");
-    require_once("libs/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/lib/alipay_notify.class.php");
+    require_once("libs/alipay/mobile/alipay.config.php");
+    require_once("libs/alipay/mobile/lib/alipay_submit.class.php");
+    require_once("libs/alipay/mobile/lib/alipay_notify.class.php");
 }else{
-    require_once("libs/alipay/alipay.config.php");
-    require_once("libs/alipay/lib/alipay_submit.class.php");
-    require_once("libs/alipay/lib/alipay_notify.class.php");
+    require_once("libs/alipay/pc/alipay.config.php");
+    require_once("libs/alipay/pc/lib/alipay_submit.class.php");
+    require_once("libs/alipay/pc/lib/alipay_notify.class.php");
 }
 
 
