@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="Public/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        /**{*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+            /*border: 0;*/
+        /*}*/
+        body{
+            font-size: 18px;
+        }
+        li{
+            list-style: none;
+        }
+        .price{
+            color: red;
+        }
+        span{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <h3>商品列表</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品描述</th>
+            <th>剩余</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $arr as $item}
+        <tr>
+            <td>{$item['goods_name']}</td>
+            <td>{$item['price']}</td>
+            <td>{$item['des']}</td>
+            <td>{$item['count']}</td>
+            <td>
+                <a href="?c=pay&a=order&id={$item['Id']}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>立即购买</button></a>
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+</div>
+</body>
+<script src="Public/js/common/jquery-3.2.1.min.js"></script>
+<script src="Public/bootstrap/dist/js/bootstrap.min.js"></script>
+</html>
